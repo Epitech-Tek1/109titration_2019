@@ -16,4 +16,6 @@
 #define INT_MIN -2147483648
 #endif
 
+#define IS_DESCRIBE _strcmp("-h", av[1])
+
 #endif /* !STRING_DEFINE_H_ */

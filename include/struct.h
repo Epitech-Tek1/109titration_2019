@@ -18,7 +18,7 @@ typedef struct value_s
     char **temp;
     int line;
     int inc;
-    info_s *type;
+    info_t *type;
 } value_t;
 
 #endif /* !STRUCT_H_ */

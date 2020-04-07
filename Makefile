@@ -41,7 +41,7 @@ RM				=	rm -rf
 
 CFLAGS			=	-W -Wall -Werror
 
-LDFLAGS			=	-Iinclude/ -Llibrary -l_csfml -l_stat -l_string
+LDFLAGS			=	-Iinclude/ -Llibrary -l_stat -l_string
 
 DFLAGS			=	-g -Wfatal-errors -Wpedantic -Wextra \
 					-Wnonnull -Wmain -Wmissing-attributes -Wsequence-point -pg

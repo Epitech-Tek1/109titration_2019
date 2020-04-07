@@ -1,0 +1,5 @@
+USAGE
+    ./109titration_2019 file
+
+DESCRIPTION
+    file    a csv file containing "vol;ph" lines

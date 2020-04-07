@@ -12,6 +12,7 @@
 bool
 _strcmp(const char *restrict comparing, const char *restrict compared)
 {
-    for (int i = 0; EQUAL && EXIST; i++);
-    return (*comparing && *compared == 0) ? (true) : (false);
+    for (int i = 0; EXIST; i++)
+        if (!(EQUAL)) return (false);
+    return (true);
 }

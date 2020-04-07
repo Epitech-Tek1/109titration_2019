@@ -15,6 +15,7 @@ LIB 				= lib_stat.a
 SRC 				= stat.c	\
 					  stat_free.c	\
 					  fopen.c	\
+					  fread.c	\
 
 CFLAGS 				= -Wall -I./include
 

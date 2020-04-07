@@ -9,6 +9,9 @@
 
 int main(int ac, char const *av[])
 {
-    if (ac == 2 && _fread(DESCRIBE))
+    if (ac == 2 && IS_DESCRIBE) {
+        _fread(DESCRIBE);
+        return (EXIT_SUCCESS);
+    }
     return 0;
 }
