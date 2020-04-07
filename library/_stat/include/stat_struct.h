@@ -28,6 +28,7 @@ typedef struct stat_s
     char **content;
     char *filepath;
     char *name;
+    size_t *length;
     size_t nline;
 } stat_t;
 

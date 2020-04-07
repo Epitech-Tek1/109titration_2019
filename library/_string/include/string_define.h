@@ -8,14 +8,6 @@
 #ifndef STRING_DEFINE_H_
 #define STRING_DEFINE_H_
 
-#ifndef INT_MAX
-#define INT_MAX 2147483647
-#endif
-
-#ifndef INT_MIN
-#define INT_MIN -2147483648
-#endif
-
 #define IS_DESCRIBE _strcmp("-h", av[1])
 
 #endif /* !STRING_DEFINE_H_ */

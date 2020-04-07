@@ -6,6 +6,7 @@
 */
 
 #include "string.h"
+#include "string_struct.h"
 
 static void init_string(char *memptr, size_t memsize)
 {

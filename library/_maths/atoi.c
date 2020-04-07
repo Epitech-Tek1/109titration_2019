@@ -5,7 +5,7 @@
 ** _atoi
 */
 
-#include "string.h"
+#include "maths.h"
 
 int
 _atoi(const char *string)

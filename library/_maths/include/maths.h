@@ -1,22 +1,23 @@
 /*
 ** EPITECH PROJECT, 2020
-** CPE_dante_2019
+** library
 ** File description:
-** stat
+** maths
 */
 
-#ifndef STAT_H_
-#define STAT_H_
+#ifndef MATHS_H_
+#define MATHS_H_
 
 #include <string.h>
 #include <stdbool.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
+#include <limits.h>
 
-#include "stat_struct.h"
-#include "stat_define.h"
-#include "stat_function.h"
+#include "maths_struct.h"
+#include "maths_define.h"
+#include "maths_function.h"
 #include "../../_string/include/string.h"
 
-#endif /* !STAT_H_ */
+#endif /* !MATHS_H_ */

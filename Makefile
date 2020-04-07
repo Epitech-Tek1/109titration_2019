@@ -12,12 +12,12 @@ SRC_DISPLAY		=
 
 ## ========================================================================== ##
 PATH_ERROR		=	source/error/
-SRC_ERROR		=
+SRC_ERROR		=	error_handling.c	\
 
 
 ## ========================================================================== ##
 PATH_INIT		=	source/init/
-SRC_INIT		=
+SRC_INIT		=	init_value.c	\
 
 
 ## ========================================================================== ##
@@ -41,7 +41,10 @@ RM				=	rm -rf
 
 CFLAGS			=	-W -Wall -Werror
 
-LDFLAGS			=	-Iinclude/ -Llibrary -l_stat -l_string
+LDFLAGS			=	-Iinclude/ -Llibrary \
+					-l_stat	\
+					-l_string	\
+					-l_maths	\
 
 DFLAGS			=	-g -Wfatal-errors -Wpedantic -Wextra \
 					-Wnonnull -Wmain -Wmissing-attributes -Wsequence-point -pg
@@ -54,20 +57,24 @@ $(BIN):			lib $(OBJ)
 lib:
 				@$(MAKE) -C library/_string/
 				@$(MAKE) -C library/_stat/
+				@$(MAKE) -C library/_maths/
 
 clean:
 				$(RM) $(OBJ)
 				@$(MAKE) -C library/_string/ clean
 				@$(MAKE) -C library/_stat/ clean
+				@$(MAKE) -C library/_maths/ clean
 
 fclean:			clean
 				$(RM) $(BIN)
 				@$(MAKE) -C library/_string/ fclean
 				@$(MAKE) -C library/_stat/ fclean
+				@$(MAKE) -C library/_maths/ fclean
 
 re_lib:
 				@$(MAKE) -C library/_string/ re
 				@$(MAKE) -C library/_stat/ re
+				@$(MAKE) -C library/_maths/ re
 
 re:				fclean all
 

@@ -10,9 +10,11 @@
 
 stat_t *_stat(const char *__restrict__ filepath, size_t nread, type info);
 void _stat_free(stat_t *statf);
+stat_t *_init_stat(stat_t *statf, const char *filepath, size_t nread,
+type info);
 
 FILE *_fopen(const char *__restrict__ filepath);
 
-void _fread(const char *__restrict__ filepath);
+bool _fread(const char *__restrict__ filepath);
 
 #endif /* !OPENF_FUNCTION_H_ */

@@ -11,8 +11,6 @@
 bool _strcmp(const char *__restrict__ comparing, const char *__restrict__
 compared);
 
-int _atoi(const char *string);
-
 void _putchar(const char character, const int fd);
 
 void _putstr(const char *__restrict__ string, const int fd);
