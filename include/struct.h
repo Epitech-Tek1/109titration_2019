@@ -8,17 +8,10 @@
 #ifndef STRUCT_H_
 #define STRUCT_H_
 
-typedef struct info_s
-{
-    double *data;
-} info_t;
-
 typedef struct value_s
 {
-    char **temp;
+    double **data;
     int line;
-    int inc;
-    info_t *type;
 } value_t;
 
 #endif /* !STRUCT_H_ */

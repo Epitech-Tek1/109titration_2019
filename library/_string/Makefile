@@ -19,9 +19,11 @@ SRC 				= memalloc.c	\
 					  strcmp.c	\
 					  strdup.c	\
 					  strcpy.c	\
+					  strncpy.c	\
 					  strnlcpy.c	\
 					  stricpy.c	\
 					  strlen.c	\
+					  strnlen.c	\
 
 
 CFLAGS 				= -Wall -I./include

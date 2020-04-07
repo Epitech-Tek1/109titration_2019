@@ -19,5 +19,5 @@ static bool titration(const int ac, char const *restrict *restrict av)
 
 int main(const int ac, char const *restrict *restrict av)
 {
-    return (!titration(ac, av)) ? (EXIT_SUCCESS) : (EXIT_ERROR);
+    return (titration(ac, av)) ? (EXIT_SUCCESS) : (EXIT_ERROR);
 }

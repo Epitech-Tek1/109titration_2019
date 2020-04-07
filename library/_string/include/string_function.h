@@ -17,6 +17,8 @@ void _putstr(const char *__restrict__ string, const int fd);
 
 size_t _strlen(char *__restrict__ string);
 
+size_t _strnlen(const char *restrict string, const char end);
+
 char *_memalloc(size_t memsize);
 
 void *_memcpy(void *__restrict__ dest, const void *__restrict__ src, size_t
@@ -25,6 +27,8 @@ length);
 char *_strdup(const char *src);
 
 char *_strcpy(char *__restrict__ dest, const char *__restrict__ src);
+
+char *_strncpy(const char *src, const char n);
 
 char *_strnlcpy(const char *__restrict__ src, const char beg, char end);
 

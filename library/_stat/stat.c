@@ -29,9 +29,10 @@ static bool count_length(stat_t *statf)
     if (!(FINFO.stream = _fopen(statf->filepath))) return (false);
     for (int i = 0; true; i++) {
         stdout = getline(&FINFO.lineptr, &FINFO.nread, FINFO.stream);
-        if (-1 == stdout) return (false);
+        if (-1 == stdout) break;
         statf->length[i] = stdout;
     }
+    return (true);
 }
 
 static bool count_line(stat_t *statf)
