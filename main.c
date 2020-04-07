@@ -7,9 +7,10 @@
 
 #include "titration.h"
 
-int main(int ac, char const *av[])
+int main(const int ac, char const *restrict *restrict av)
 {
-    if (ac == 2 && IS_DESCRIBE) {
+    if (ac != 2) return (false);
+    if (IS_DESCRIBE) {
         _fread(DESCRIBE);
         return (EXIT_SUCCESS);
     }
