@@ -17,22 +17,7 @@ static char *get_name(const char *restrict filepath)
     for (int i = 0; filepath[begin_name]; i++, begin_name++)
         name[i] = filepath[begin_name];
     return (name);
-}
 
-static bool count_length(stat_t *statf)
-{
-    int stdout = 0;
-
-    if (!(statf->length = malloc(sizeof(int) * (statf->nline + 1))))
-        return (false);
-    statf->length[statf->nline + 1] = '\0';
-    if (!(FINFO.stream = _fopen(statf->filepath))) return (false);
-    for (int i = 0; true; i++) {
-        stdout = getline(&FINFO.lineptr, &FINFO.nread, FINFO.stream);
-        if (-1 == stdout) break;
-        statf->length[i] = stdout;
-    }
-    return (true);
 }
 
 static bool count_line(stat_t *statf)
@@ -45,21 +30,17 @@ static bool count_line(stat_t *statf)
 
 static bool fill_info(stat_t *statf, type info)
 {
-    if (!count_line(statf)) return (false);
-    if (!count_length(statf)) return (false);
+    count_line(statf);
     if (!(FINFO.stream = _fopen(statf->filepath))) return (false);
-    if (partial == info) {
-        if (!(statf->name = get_name(statf->filepath))) return (false);
-        return (fclose(FINFO.stream) == EXIT_SUCCESS) ? (true) : (false);
+    if (complet == info) {
+        statf->content = malloc(S_ARRAY * (statf->nline + 1));
+        statf->content[statf->nline] = NULL;
+        for (int i = 0; statf->nline != i; i++) {
+            statf->content[i] = _memalloc(100);
+            getline(&statf->content[i], &FINFO.nread, FINFO.stream);
+        }
     }
-    statf->content = malloc(S_ARRAY * (statf->nline + 1));
-    statf->content[statf->nline] = NULL;
-    for (int i = 0; statf->nline != i; i++) {
-        if (!(statf->content[i] = _memalloc(statf->length[i])))
-            return (false);
-        getline(&statf->content[i], &FINFO.nread, FINFO.stream);
-    }
-    if (!(statf->name = get_name(statf->filepath))) return (false);
+    statf->name = get_name(statf->filepath);
     return (fclose(FINFO.stream) == EXIT_SUCCESS) ? (true) : (false);
 }
 

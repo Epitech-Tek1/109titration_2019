@@ -10,6 +10,6 @@
 
 bool init_value(value_t *value, char const *restrict *restrict av);
 
-bool check_input_file_validity(char **content);
+bool check_input_file_validity(char **content, size_t nline);
 
 #endif /* !FUNCTION_H_ */

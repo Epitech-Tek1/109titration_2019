@@ -6,12 +6,10 @@
 */
 
 #include "titration.h"
-#undef PREG_MATCH
-#define PREG_MATCH content[i][n] && content[i][n] != '\n'
 
-bool check_input_file_validity(char **content)
+bool check_input_file_validity(char **content, size_t nline)
 {
-    while (**content)
-        if (!_isalpha_number(*content)) return (false);
-        else content++;
+    for (int i = 0; i != nline; i++)
+        if (!_preg_match("1234567890.;\n", content[i])) return (false);
+    return (true);
 }

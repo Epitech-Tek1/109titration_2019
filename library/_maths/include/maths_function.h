@@ -10,8 +10,7 @@
 
 int _atoi(const char *string);
 
-bool _isalpha_digit(const char c);
-
-bool _isalpha_number(const char *__restrict__ string);
+bool _preg_match(const char *__restrict__ pattern,
+const char *__restrict__ subject);
 
 #endif /* !MATHS_FUNCTION_H_ */

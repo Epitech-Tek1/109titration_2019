@@ -9,9 +9,9 @@
 
 char *_strncpy(const char *src, const char n)
 {
-    int length = _strnlen(src, n);
+    int length = _strlen((char *)src);
     char *dest = _memalloc(length);
 
-    for (int i = 0; n != src[i]; i++) dest[i] = src[i];
+    for (int i = 0; src[i] && n != src[i]; i++) dest[i] = src[i];
     return (dest);
 }

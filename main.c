@@ -14,6 +14,7 @@ static bool titration(const int ac, char const *restrict *restrict av)
     if (ac != 2) return (false);
     if (IS_DESCRIBE) return (!_fread(DESCRIBE)) ? (false) : (true);
     if (!init_value(value, av)) return (false);
+    if (!process(value)) return (false);
     return (true);
 }
 
