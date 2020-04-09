@@ -15,6 +15,10 @@ void _putchar(const char character, const int fd);
 
 void _putstr(const char *__restrict__ string, const int fd);
 
+void _putnbr(int number, const int fd);
+
+void _printt(const char *restrict format, const void *array);
+
 size_t _strlen(char *__restrict__ string);
 
 size_t _strnlen(const char *restrict string, const char end);

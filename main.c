@@ -9,7 +9,7 @@
 
 static bool titration(const int ac, char const *restrict *restrict av)
 {
-    value_t *value = NULL;
+    value_t *value = malloc(sizeof(value_t));
 
     if (ac != 2) return (false);
     if (IS_DESCRIBE) return (!_fread(DESCRIBE)) ? (false) : (true);

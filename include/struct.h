@@ -8,9 +8,15 @@
 #ifndef STRUCT_H_
 #define STRUCT_H_
 
+typedef struct derivation_s
+{
+    double **deriv_data;
+} derivation_t;
+
 typedef struct value_s
 {
     double **data;
+    derivation_t *deriv;
     int line;
 } value_t;
 

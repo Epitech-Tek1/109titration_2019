@@ -22,7 +22,8 @@ SRC_INIT		=	init_value.c	\
 
 ## ========================================================================== ##
 PATH_PROCESS	=	source/process/
-SRC_PROCESS		=
+SRC_PROCESS		=	derivation.c	\
+					process.c	\
 
 ## ========================================================================== ##
 SRC				=	main.c	\

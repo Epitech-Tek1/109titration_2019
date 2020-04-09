@@ -22,7 +22,7 @@ bool init_value(value_t *value, char const *restrict *restrict av)
 {
     stat_t *statf = _stat(av[1], DEFAULT, complet);
 
-    if (!statf || !(value = malloc(sizeof(value_t))) ||
+    if (!statf ||
     !(value->data = malloc(sizeof(double *) * (statf->nline + 1))))
         return (false);
     value->line = statf->nline;
