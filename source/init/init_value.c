@@ -18,14 +18,14 @@ const size_t nline)
     return (true);
 }
 
-bool init_value(value_t *value, char const *restrict *restrict av)
+bool init_value(value_t *value, char const *restrict *restrict av, int *line)
 {
     stat_t *statf = _stat(av[1], DEFAULT, complet);
 
     if (!statf ||
     !(value->data = malloc(sizeof(double *) * (statf->nline + 1))))
         return (false);
-    value->line = statf->nline;
+    *line = statf->nline;
     if (!check_input_file_validity(statf->content, statf->nline))
         return (false);
     if (!init_data(value->data, statf->content, statf->nline)) return (false);

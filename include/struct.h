@@ -17,7 +17,10 @@ typedef struct value_s
 {
     double **data;
     derivation_t *deriv;
+    double tmp;
+    double tmp2;
     int line;
+    int i;
 } value_t;
 
 #endif /* !STRUCT_H_ */
